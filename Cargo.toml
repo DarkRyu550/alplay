@@ -1,0 +1,18 @@
+[package]
+name = "alplay"
+version = "0.1.0"
+authors = ["Matheus Branco Borella <dark.ryu.550@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+clap = "2"
+
+[target.'cfg(windows)'.dependencies]
+cpal = { version = "0.13", features = ["asio"] }
+
+[target.'cfg(not(windows))'.dependencies]
+cpal = { version = "0.13" }
+
+[profile.release]
+opt-level = 3
+lto = true

@@ -1,0 +1,1 @@
+curl -o - http://10.8.0.1:8080 | ffmpeg -i - -f s16le - | cargo run --release -- -s 0 -c 2 -f s16le -r 48000
